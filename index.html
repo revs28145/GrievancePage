@@ -1,48 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grievance Form</title>
+  <meta charset="UTF-8">
+  <title>Submit a Grievance</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
+      background: url('https://cdn.pixabay.com/photo/2025/01/11/07/27/valentines-day-9325423_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    .container {
-      max-width: 500px;
-      margin: auto;
-      background: #fff;
+
+    .grievance-form {
+      background: rgba(255, 238, 244, 0.95); /* Soft pink background with transparency */
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      width: 400px;
+      max-width: 90%;
     }
-    textarea, input[type="submit"] {
+
+    .grievance-form h2 {
+      text-align: center;
+      color: #d6336c;
+      margin-bottom: 20px;
+    }
+
+    .grievance-form input,
+    .grievance-form textarea,
+    .grievance-form select {
       width: 100%;
       padding: 12px;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #fff;
     }
-    input[type="submit"] {
-      background: #4CAF50;
+
+    .grievance-form textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .submit-btn {
+      background-color: #ff69b4;
       color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 15px;
+      width: 100%;
+      font-size: 18px;
       cursor: pointer;
     }
-    input[type="submit"]:hover {
-      background: #45a049;
+
+    .submit-btn:hover {
+      background-color: #ff1493;
+    }
+
+    label {
+      font-weight: bold;
+      color: #b30059;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Submit Your Grievance</h2>
-    <form action="https://formspree.io/f/xovdbzqb " method="POST">
-      <label for="message">Your Message:</label>
-      <textarea name="message" rows="8" placeholder="Type your grievance here..." required></textarea>
-      <input type="submit" value="Send to My Boyfriend">
-    </form>
-  </div>
+  <form class="grievance-form" action="https://formspree.io/f/xovdbzqb" method="POST">
+    <h2>Submit a Grievance 🌹</h2>
+
+    <input type="text" name="title" placeholder="Grievance Title" required>
+
+    <textarea name="message" placeholder="What's bothering you?" required></textarea>
+
+    <label for="mood">Mood:</label>
+    <select id="mood" name="mood">
+      <option>Angry 😡</option>
+      <option>Sad 😢</option>
+      <option>Frustrated 😤</option>
+      <option>Confused 🤔</option>
+      <option>Meh 😐</option>
+      <option>Hopeful 💖</option>
+    </select>
+
+    <label for="severity">Severity:</label>
+    <select id="severity" name="severity">
+      <option>Minor (A chunky KitKat will fix this) 🍫</option>
+      <option>Moderate (Ice cream therapy needed) 🍦</option>
+      <option>Serious (I need a hug) 🤗</option>
+      <option>Critical (Emergency dance party required) 💃</option>
+    </select>
+
+    <button type="submit" class="submit-btn">Submit 💌</button>
+  </form>
 </body>
 </html>
